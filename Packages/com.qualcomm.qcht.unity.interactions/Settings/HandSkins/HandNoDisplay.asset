@@ -16,7 +16,3 @@ MonoBehaviour:
   MainMaterial: {fileID: 0}
   GhostMesh: {fileID: 0}
   GhostMaterial: {fileID: 0}
-  hasFeedbacks: 0
-  <Idle>k__BackingField: []
-  <Hovered>k__BackingField: []
-  <Selected>k__BackingField: []
