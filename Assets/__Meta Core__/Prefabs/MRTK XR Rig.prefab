@@ -220,6 +220,7 @@ MonoBehaviour:
       m_Action: Main Camera - TPD - Rotation
       m_Flags: 0
     m_Flags: 0
+  m_HasMigratedActions: 1
 --- !u!114 &404949538145338360
 MonoBehaviour:
   m_ObjectHideFlags: 0

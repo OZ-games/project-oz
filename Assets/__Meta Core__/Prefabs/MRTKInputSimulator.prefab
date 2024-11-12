@@ -61,7 +61,6 @@ MonoBehaviour:
     invertPitch: 0
   eyeGazeSettings:
     simulationEnabled: 1
-    isTracked: 1
     eyeOriginOffset: {x: 0, y: 0, z: 0}
     lookHorizontal: {fileID: -7345170528461143681, guid: 70b361cf3c037d54896482d1ffd9f999, type: 3}
     lookVertical: {fileID: -4223466768389085971, guid: 70b361cf3c037d54896482d1ffd9f999, type: 3}

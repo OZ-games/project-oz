@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5fcb538e503f64b8d8b1199911ce2fb4, type: 2}
     - target: {fileID: 5732716946704694469, guid: 0531525474b10a34f9f74dca396c0ecc, type: 3}
       propertyPath: m_Name
-      value: Axis Gizmo Tracked Saved Anchor Addition
+      value: Axis Gizmo Saved Anchor Addition
       objectReference: {fileID: 0}
     - target: {fileID: 5732716946704694470, guid: 0531525474b10a34f9f74dca396c0ecc, type: 3}
       propertyPath: m_RootOrder

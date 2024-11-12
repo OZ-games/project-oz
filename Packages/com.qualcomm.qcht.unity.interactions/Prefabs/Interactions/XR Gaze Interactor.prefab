@@ -136,7 +136,6 @@ MonoBehaviour:
   m_SampleFrequency: 20
   m_HitDetectionType: 0
   m_SphereCastRadius: 0.1
-  m_ConeCastAngle: 6
   m_RaycastMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -163,7 +162,6 @@ MonoBehaviour:
   m_EnableARRaycasting: 0
   m_OccludeARHitsWith3DObjects: 0
   m_OccludeARHitsWith2DObjects: 0
-  m_ScaleMode: 0
   m_GazeAssistanceCalculation: 1
   m_GazeAssistanceColliderFixedSize: 1
   m_GazeAssistanceColliderScale: 1
@@ -372,30 +370,6 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_ScaleToggleAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Scale Toggle
-      m_Type: 1
-      m_ExpectedControlType: 
-      m_Id: 13829902-ddeb-4fcc-86f7-7327a24c4415
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_ScaleDeltaAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Scale Delta
-      m_Type: 0
-      m_ExpectedControlType: Vector2
-      m_Id: 565421c1-1d77-489d-938a-58d879de5000
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
   m_ButtonPressPoint: 0.5
 --- !u!114 &3554384127049240205
 MonoBehaviour:
@@ -422,5 +396,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cc3369d42ef4194b89acee81a8094f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabReticle: {fileID: 6499929380600910383, guid: 9cd3361ac5a304f21aa001ae1224a759, type: 3}
-  smoothSpeed: 0.01
+  _prefabReticle: {fileID: 6499929380600910383, guid: 9cd3361ac5a304f21aa001ae1224a759, type: 3}
+  _smoothSpeed: 0.01

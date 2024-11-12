@@ -16,7 +16,3 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 73ec500cc8d454be3aab3c63f039f3f8, type: 2}
   GhostMesh: {fileID: -8882449500762218735, guid: 28e70fc6afa2c412f83e98a832d93d47, type: 3}
   GhostMaterial: {fileID: 2100000, guid: 6c05f4a63d172470b80d36964d91f630, type: 2}
-  hasFeedbacks: 0
-  <Idle>k__BackingField: []
-  <Hovered>k__BackingField: []
-  <Selected>k__BackingField: []
