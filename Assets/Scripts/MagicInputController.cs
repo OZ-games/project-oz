@@ -19,10 +19,10 @@ public class MagicInputController : MonoBehaviour
         if (cam == null)
             cam = Camera.main;
 
-        //Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        Ray ray = new Ray();
-        ray.origin = transform.position;
-        ray.direction = transform.forward;
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        //Ray ray = new Ray();
+        //ray.origin = transform.position;
+        //ray.direction = transform.forward;
         RaycastHit hit;
 
         destination = Physics.Raycast(ray, out hit) ? hit.point : ray.GetPoint(1000);
