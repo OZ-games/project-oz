@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 1462268095410423464}
   - component: {fileID: 1242953149538218304}
   - component: {fileID: 1311956531701088546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VFX_Projectile03
   m_TagString: Bullet
   m_Icon: {fileID: 0}
