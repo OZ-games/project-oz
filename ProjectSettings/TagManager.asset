@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - LeftHand
+  - RightHand
   layers:
   - Default
   - TransparentFX
@@ -12,9 +14,9 @@ TagManager:
   - Post-Processing
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Bullet
+  - Collision
+  - Object
   - 
   - 
   - 

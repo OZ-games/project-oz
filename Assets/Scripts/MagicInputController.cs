@@ -4,6 +4,7 @@ public class MagicInputController : MonoBehaviour
 {
     public Projectile projectile;
     public Transform firePoint;
+    public bool isLeftHand;
 
     private Camera cam;
     private Vector3 destination;
@@ -24,8 +25,10 @@ public class MagicInputController : MonoBehaviour
         //ray.origin = transform.position;
         //ray.direction = transform.forward;
         RaycastHit hit;
+        int layerMask = 1 << LayerMask.NameToLayer("Object");
 
-        destination = Physics.Raycast(ray, out hit) ? hit.point : ray.GetPoint(1000);
+        destination = Physics.Raycast(ray, out hit, layerMask) ? hit.point : ray.GetPoint(1000);
+        //destination = ray.GetPoint(10);
         MoveProjectile();
     }
 
