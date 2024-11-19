@@ -6,12 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 5aeabcffced910040a0c8ce222ace0d9
+  - enabled: 1
     path: Assets/Scenes/MagicScene.unity
     guid: 3ec7ec24eacc1ce428dff003a3e15214
-  - enabled: 0
-    path: Assets/ThirdPartyAssets/Hovl Studio/Magic effects pack/Demo scene/Magic
-      effects demo.unity
-    guid: 3eebb27d911d4bd419f5425e850ee039
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 87467803e919cef4394e7f39c6521b51, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: e61946fb8f8ff5e418d6ebb56cca2034, type: 2}
