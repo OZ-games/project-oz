@@ -18,6 +18,13 @@ public class GroundDetector : MonoBehaviour
     private List<ARPlane> planes;
     [SerializeField]
     private ARPlane groundPlane;
+    [SerializeField]
+    private ARPlane ceilingPlane;
+
+
+    [Header("Prefabs")]
+    [SerializeField]
+    private GameObject axe;
 
     [Header("Materials")]
     [SerializeField]
@@ -58,17 +65,45 @@ public class GroundDetector : MonoBehaviour
             plane.GetComponent<MeshRenderer>().material = defaultMaterial;
 
         // All planes to HorizontalUp(real) planes.
-        planes = planes
-                    .Where(plane => plane.alignment == PlaneAlignment.HorizontalUp && plane.center.y < head.position.y)
-                    .ToList();
+        List<ARPlane> groundPlanes = planes
+                                        .Where(plane => plane.alignment == PlaneAlignment.HorizontalUp && plane.center.y < head.position.y)
+                                        .ToList();
+
+        groundPlanes.Sort((a, b) => (b.size.x * b.size.y).CompareTo(a.size.x * a.size.y));
+
+        if (groundPlanes.Count != 0)
+        {
+            groundPlane = groundPlanes[0];
+            groundPlane.GetComponent<MeshRenderer>().material = horizontalUpMaterial;
+        }
 
 
-        planes.Sort((a, b) => (b.size.x * b.size.y).CompareTo(a.size.x * a.size.y));
+        List<ARPlane> ceilingPlanes = planes
+                                        .Where(plane => plane.alignment == PlaneAlignment.HorizontalUp && plane.center.y > head.position.y)
+                                        .ToList();
 
-        if (planes.Count == 0) return;
+        ceilingPlanes.Sort((a, b) => (b.size.x * b.size.y).CompareTo(a.size.x * a.size.y));
 
-        groundPlane = planes[0];
-        groundPlane.GetComponent<MeshRenderer>().material = verticalMaterial;
+        if (ceilingPlanes.Count != 0)
+        {
+            ceilingPlane = ceilingPlanes[0];
+            ceilingPlane.GetComponent<MeshRenderer>().material = horizontalDownMaterial;
+        }
+    }
 
+    private bool hasSpawnedAxe = false;
+    private bool init = false;
+    private void Update()
+    {
+        if (!init) return;
+        if (ceilingPlane == null || hasSpawnedAxe) return;
+
+        Instantiate(axe, ceilingPlane.center, Quaternion.identity);
+        hasSpawnedAxe = true;
+    }
+
+    public void Init()
+    {
+        init = true;
     }
 }
