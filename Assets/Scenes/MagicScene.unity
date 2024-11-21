@@ -4951,7 +4951,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1396569401369525036, guid: c2af625d3e93b6c4b81ba1d5784017df, type: 3}
       propertyPath: recenterOnStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1396569401369525037, guid: c2af625d3e93b6c4b81ba1d5784017df, type: 3}
       propertyPath: m_RootOrder
@@ -5003,7 +5003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1396569401369525039, guid: c2af625d3e93b6c4b81ba1d5784017df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2af625d3e93b6c4b81ba1d5784017df, type: 3}
