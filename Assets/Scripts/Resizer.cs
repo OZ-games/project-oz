@@ -14,7 +14,12 @@ public class Resizer : MonoBehaviour
     [SerializeField]
     private AnimationCurve resizeAnim;
 
-    private IEnumerator Start()
+    private void OnEnable()
+    {
+        StartCoroutine(StartResize());
+    }
+
+    private IEnumerator StartResize()
     {
         startSize = transform.localScale;
 

@@ -14,7 +14,12 @@ public class Mover : MonoBehaviour
     [SerializeField]
     private AnimationCurve moveAnim;
 
-    private IEnumerator Start()
+    private void OnEnable()
+    {
+        StartCoroutine(StartMove());
+    }
+
+    private IEnumerator StartMove()
     {
         startPos = transform.localPosition;
 

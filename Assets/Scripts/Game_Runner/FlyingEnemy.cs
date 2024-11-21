@@ -36,6 +36,8 @@ public class FlyingEnemy : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         audioSource.PlayOneShot(spawnSounds[Random.Range(0, spawnSounds.Length)]);
+
+        target = Camera.main.transform;
     }
 
     // Update is called once per frame
@@ -44,17 +46,23 @@ public class FlyingEnemy : MonoBehaviour
         if (!isDead)
         {
             transform.LookAt(target);
-            rigid.AddForce((target.position - transform.position).normalized * moveSpeed * Time.deltaTime);
 
             if (curAttackRate < attackRate)
             {
                 curAttackRate += Time.deltaTime;
             }
 
-            if ((Vector3.Distance(target.position, transform.position) < attackRange) && curAttackRate >= attackRate)
+            if ((Vector3.Distance(target.position, transform.position) < attackRange))
             {
-                curAttackRate = 0f;
-                Attack();
+                if (curAttackRate >= attackRate)
+                {
+                    curAttackRate = 0f;
+                    Attack();
+                }
+            }
+            else
+            {
+                rigid.AddForce((target.position - transform.position).normalized * moveSpeed * Time.deltaTime);
             }
         }
     }
@@ -71,10 +79,14 @@ public class FlyingEnemy : MonoBehaviour
     {
         animator.SetInteger("animation", 3);
         audioSource.PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
+        GameManager.instance.UpdateHp(-10);
     }
 
     private void Die()
     {
+        EnemyCreator.instance.EnemyRemove(this);
+        GameManager.instance.UpdateScore(100);
+
         isDead = true;
         animator.SetInteger("animation", 5);
         audioSource.PlayOneShot(deathSounds[Random.Range(0, deathSounds.Length)]);
@@ -102,6 +114,7 @@ public class FlyingEnemy : MonoBehaviour
             yield return null;
         }
 
-        gameObject.SetActive(false);
+        Destroy(gameObject);
+        //gameObject.SetActive(false);
     }
 }
