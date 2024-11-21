@@ -1,8 +1,13 @@
+using System.Collections;
+using MixedReality.Toolkit.Subsystems;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField]
+    private float loadingTime = 2.0f;
+
     private static bool hasMainSceneLoaded = false;
 
     private void Awake()
@@ -28,8 +33,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        StartCoroutine(LoadingScene(sceneName));
     }
 
     public void ReloadScene()
@@ -40,5 +44,15 @@ public class SceneLoader : MonoBehaviour
         SceneManager.UnloadSceneAsync(currentScene);
 
         SceneManager.LoadScene(index, LoadSceneMode.Additive);
+    }
+
+    private IEnumerator LoadingScene(string sceneName)
+    {
+        Portal.portal.portalStart.SetActive(true);
+
+        yield return new WaitForSeconds(loadingTime);
+
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
 }
