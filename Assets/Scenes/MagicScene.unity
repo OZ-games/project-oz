@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -3640565977533894160, guid: a4fea1f31357f9c4aa74cebdc6102596, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 6254211654831167286, guid: a4fea1f31357f9c4aa74cebdc6102596, type: 3}
       propertyPath: m_Name
       value: Batty_A
@@ -264,6 +268,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -5534708384187850082, guid: d7acd22b112fa554ea5d1a6e969544db, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 2634862480654949252, guid: d7acd22b112fa554ea5d1a6e969544db, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -478,6 +486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Batty_B (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5365239598357879048, guid: d6c75f35d2bea094dace52bc1bd7ab9b, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c75f35d2bea094dace52bc1bd7ab9b, type: 3}
 --- !u!1001 &211280785
@@ -1656,6 +1668,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -5534708384187850082, guid: d7acd22b112fa554ea5d1a6e969544db, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 2634862480654949252, guid: d7acd22b112fa554ea5d1a6e969544db, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1721,6 +1737,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -5534708384187850082, guid: d7acd22b112fa554ea5d1a6e969544db, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 2634862480654949252, guid: d7acd22b112fa554ea5d1a6e969544db, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1820,6 +1840,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -6294090529183399863, guid: 4704dd0f53433f64f9b3ed60415f94a7, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 6592695202648049861, guid: 4704dd0f53433f64f9b3ed60415f94a7, type: 3}
       propertyPath: m_Name
       value: Batty_D
@@ -1945,6 +1969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Batty_B
       objectReference: {fileID: 0}
+    - target: {fileID: 5365239598357879048, guid: d6c75f35d2bea094dace52bc1bd7ab9b, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c75f35d2bea094dace52bc1bd7ab9b, type: 3}
 --- !u!1001 &463260182
@@ -1954,6 +1982,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -3640565977533894160, guid: a4fea1f31357f9c4aa74cebdc6102596, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 6254211654831167286, guid: a4fea1f31357f9c4aa74cebdc6102596, type: 3}
       propertyPath: m_Name
       value: Batty_A (3)
@@ -3008,6 +3040,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -6294090529183399863, guid: 4704dd0f53433f64f9b3ed60415f94a7, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 6592695202648049861, guid: 4704dd0f53433f64f9b3ed60415f94a7, type: 3}
       propertyPath: m_Name
       value: Batty_D (2)
@@ -4108,6 +4144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Batty_B (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5365239598357879048, guid: d6c75f35d2bea094dace52bc1bd7ab9b, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c75f35d2bea094dace52bc1bd7ab9b, type: 3}
 --- !u!1 &951851810
@@ -5354,6 +5394,18 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1354823973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354823966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1aa974e94acc04f9e30e1aeea1f687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1452339896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2634862480654949252, guid: d7acd22b112fa554ea5d1a6e969544db, type: 3}
@@ -5366,6 +5418,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -5534708384187850082, guid: d7acd22b112fa554ea5d1a6e969544db, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 2634862480654949252, guid: d7acd22b112fa554ea5d1a6e969544db, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -7032,6 +7088,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -6294090529183399863, guid: 4704dd0f53433f64f9b3ed60415f94a7, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 6592695202648049861, guid: 4704dd0f53433f64f9b3ed60415f94a7, type: 3}
       propertyPath: m_Name
       value: Batty_D (1)
@@ -7106,6 +7166,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -3640565977533894160, guid: a4fea1f31357f9c4aa74cebdc6102596, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 6254211654831167286, guid: a4fea1f31357f9c4aa74cebdc6102596, type: 3}
       propertyPath: m_Name
       value: Batty_A (2)
@@ -7245,6 +7309,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -6294090529183399863, guid: 4704dd0f53433f64f9b3ed60415f94a7, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 6592695202648049861, guid: 4704dd0f53433f64f9b3ed60415f94a7, type: 3}
       propertyPath: m_Name
       value: Batty_D (3)
@@ -8060,6 +8128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Batty_B (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5365239598357879048, guid: d6c75f35d2bea094dace52bc1bd7ab9b, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c75f35d2bea094dace52bc1bd7ab9b, type: 3}
 --- !u!1 &1886112479
@@ -9398,6 +9470,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250996342}
     m_Modifications:
+    - target: {fileID: -3640565977533894160, guid: a4fea1f31357f9c4aa74cebdc6102596, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1354823965}
     - target: {fileID: 6254211654831167286, guid: a4fea1f31357f9c4aa74cebdc6102596, type: 3}
       propertyPath: m_Name
       value: Batty_A (1)

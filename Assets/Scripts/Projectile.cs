@@ -39,7 +39,7 @@ public class Projectile : MonoBehaviour
             impact.GetComponent<AudioSource>().PlayOneShot(impactSound);
 
             Destroy(impact, 2f);
-            Destroy(gameObject);
+            Destroy(gameObject, 0.1f);
         }
     }
 
