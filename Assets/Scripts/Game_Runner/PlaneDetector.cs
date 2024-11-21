@@ -19,13 +19,18 @@ public class PlaneDetector : MonoBehaviour
 
     public List<GameObject> buttonPrefabs;
 
+    private RunnerGameManager runnerGameManager;
+
     private void Awake()
     {
         eyelevelTransform = FindObjectOfType<XROrigin>().transform.Find("Main Camera").transform;
+        runnerGameManager = FindObjectOfType<RunnerGameManager>();
     }
 
     private void Update()
     {
+        if (runnerGameManager.IsRunningGame == false) return;
+
         spawnTimer += Time.deltaTime;
 
         transform.position = eyelevelTransform.position;

@@ -79,7 +79,7 @@ public class FlyingEnemy : MonoBehaviour
     {
         animator.SetInteger("animation", 3);
         audioSource.PlayOneShot(attackSounds[Random.Range(0, attackSounds.Length)]);
-        GameManager.instance.UpdateHp(-10);
+        GameManager.instance.UpdateHp(-5);
     }
 
     private void Die()
@@ -90,9 +90,9 @@ public class FlyingEnemy : MonoBehaviour
         isDead = true;
         animator.SetInteger("animation", 5);
         audioSource.PlayOneShot(deathSounds[Random.Range(0, deathSounds.Length)]);
-        
-        if (deathEffect) 
-        { 
+
+        if (deathEffect)
+        {
             deathEffect.SetActive(true);
         }
 
