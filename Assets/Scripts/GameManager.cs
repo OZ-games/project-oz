@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField]
+    private Timer timer;
+
+    [SerializeField]
     private int maxHp = 100;
 
     private int curHp;
@@ -38,6 +41,9 @@ public class GameManager : MonoBehaviour
     private bool isGameOver;
     private AudioSource audioSource;
 
+    public TextMeshProUGUI gameClearText;
+    private const string GAMECLEAR_MESSAGE_FORMAT = "Game Clear!\nScore: {0}";
+
     void Start()
     {
         if (instance == null)
@@ -48,6 +54,36 @@ public class GameManager : MonoBehaviour
         curHp = maxHp;
 
         audioSource = GetComponent<AudioSource>();
+
+        gameClearText.gameObject.SetActive(false);
+
+        SceneManager.sceneLoaded += RegisterGameStartEvents;
+    }
+
+    private void RegisterGameStartEvents(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MagicScene" || scene.name == "JengaScene")
+        {
+            timer.Appear();
+            timer.InitTimer(60);
+            timer.OnFinishTimer.AddListener(() =>
+            {
+                gameClearText.text = string.Format(GAMECLEAR_MESSAGE_FORMAT, CurScore);
+                gameClearText.gameObject.SetActive(true);
+                GameClear();
+            });
+
+            timer.StartTimer();
+        }
+    }
+
+    private void GameClear()
+    {
+        if (!isGameOver)
+        {
+            isGameOver = true;
+            StartCoroutine(BackToMainMenu());
+        }
     }
 
     private void GameOver()
@@ -66,6 +102,8 @@ public class GameManager : MonoBehaviour
 
         isGameOver = false;
         InitHpAndScore();
+        timer.Disappear();
+        gameClearText.gameObject.SetActive(false);
         sceneLoader.LoadScene("MainScene");
     }
 
@@ -80,19 +118,20 @@ public class GameManager : MonoBehaviour
 
         missionFailedText.gameObject.SetActive(false);
     }
-    
+
     public void UpdateHp(int value)
     {
+        int prevHp = curHp;
         curHp += value;
         slider.Value = (float)curHp / maxHp;
         hpText.text = "Hp   " + curHp;
 
-        if (curHp <= 0)
+        if (prevHp > 0 && curHp <= 0)
         {
             audioSource.PlayOneShot(gameOverVoice);
             GameOver();
         }
-        else
+        else if (curHp > 0)
         {
             audioSource.PlayOneShot(badVoice);
         }

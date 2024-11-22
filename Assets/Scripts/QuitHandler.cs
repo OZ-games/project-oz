@@ -6,6 +6,7 @@ public class QuitHandler : MonoBehaviour
 {
     public void Quit()
     {
-        Application.Quit();
+        AndroidJavaObject activity = new AndroidJavaClass("com.metalense.ProjectOZ").GetStatic<AndroidJavaObject>("currentActivity");
+        activity.Call<bool>("moveTaskToBack", true);
     }
 }

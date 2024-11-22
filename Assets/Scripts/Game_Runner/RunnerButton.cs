@@ -13,7 +13,7 @@ public class RunnerButton : MonoBehaviour
 
     private void Awake()
     {
-        transform.localScale = Vector3.one * Random.Range(0.3f, 0.5f);
+        transform.localScale = Vector3.one * Random.Range(0.6f, 0.9f);
     }
 
     private void HasBeenTouchedByRunner()

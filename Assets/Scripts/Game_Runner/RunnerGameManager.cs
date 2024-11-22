@@ -11,9 +11,8 @@ public class RunnerGameManager : MonoBehaviour
 
     private const string CLEAR_MESSAGE_FORMAT = "Game Clear!\nScore: {0}";
 
-    public float gameTime = 30;
-    private float gameTimer;
-    public TextMeshPro timerText;
+    public Timer timer;
+    public float gameTime = 60;
     public TextMeshProUGUI gameClearText;
 
     public float gameStartDistance = 10f;
@@ -40,7 +39,8 @@ public class RunnerGameManager : MonoBehaviour
         hasStarted = false;
         hasFinished = false;
 
-        gameTimer = gameTime;
+        timer.Appear();
+        timer.InitTimer(gameTime);
     }
 
     public void InitGame()
@@ -50,8 +50,7 @@ public class RunnerGameManager : MonoBehaviour
         hasInitialized = true;
         gameInitPosition = headTransform.position;
 
-        timerText.gameObject.SetActive(true);
-        timerText.text = string.Format("{0:D2}", (int)gameTimer);
+        timer.OnFinishTimer.AddListener(FinishGame);
         onInit.Invoke();
     }
 
@@ -61,6 +60,7 @@ public class RunnerGameManager : MonoBehaviour
         if (hasStarted) return;
 
         hasStarted = true;
+        timer.StartTimer();
         onStart.Invoke();
     }
 
@@ -70,23 +70,12 @@ public class RunnerGameManager : MonoBehaviour
 
         if (!hasStarted)
             UpdateWaitingGame();
-        else if (hasStarted)
-            UpdatePlayingGame();
     }
 
     private void UpdateWaitingGame()
     {
         if (Vector3.Distance(gameInitPosition, headTransform.position) >= gameStartDistance)
             StartGame();
-    }
-
-    private void UpdatePlayingGame()
-    {
-        gameTimer -= Time.deltaTime;
-        timerText.text = string.Format("{0:D2}", (int)gameTimer);
-
-        if (gameTimer <= 0)
-            FinishGame();
     }
 
     private void FinishGame()

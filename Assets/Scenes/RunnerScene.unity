@@ -249,7 +249,7 @@ MonoBehaviour:
   - {fileID: 1663312472}
   - {fileID: 1156939258}
   - {fileID: 1770605379}
-  spawnTime: 5
+  spawnTime: 3
   buttonPrefabs:
   - {fileID: 8462826683832617097, guid: 5dd91387ba7ff264a9b8223409065c36, type: 3}
   - {fileID: 409159505772945937, guid: 0bf5c1f641a0af54d84b1fc0107a01e0, type: 3}
