@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI gameClearText;
     private const string GAMECLEAR_MESSAGE_FORMAT = "Game Clear!\nScore: {0}";
+    float originalFontSize;
+
 
     void Start()
     {
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour
 
         gameClearText.gameObject.SetActive(false);
 
+        originalFontSize = scoreText.fontSize;
         SceneManager.sceneLoaded += RegisterGameStartEvents;
     }
 
@@ -114,7 +117,7 @@ public class GameManager : MonoBehaviour
         hpText.text = "Hp   " + curHp;
 
         curScore = 0;
-        scoreText.text = "Score " + curScore;
+        scoreText.text = "0000";
 
         missionFailedText.gameObject.SetActive(false);
     }
@@ -137,10 +140,49 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    Coroutine scoreCoroutine;
     public void UpdateScore(int value)
     {
+        // scoreText.text = "Score " + curScore;
+
+        if (scoreCoroutine != null)
+        {
+            StopCoroutine(scoreCoroutine);
+            scoreCoroutine = null;
+        }
+
+        scoreCoroutine = StartCoroutine(UpdateScoreRoutine(curScore, curScore + value));
+
         curScore += value;
-        scoreText.text = "Score " + curScore;
         audioSource.PlayOneShot(goodVoice);
+    }
+
+    [Header("Score")]
+    [SerializeField]
+    private AnimationCurve scoreScaleCurve;
+    [SerializeField]
+    private AnimationCurve scoreIncreaseCurve;
+    [SerializeField]
+    private float scoreScaleAnimTime;
+
+    private IEnumerator UpdateScoreRoutine(int prevScore, int newScore)
+    {
+        float timer = 0;
+        float progress = 0;
+
+        while (progress < 1)
+        {
+            timer += Time.deltaTime;
+            progress = timer / scoreScaleAnimTime;
+
+            int displayedScore = (int)Mathf.Lerp(prevScore, newScore, scoreIncreaseCurve.Evaluate(progress));
+            scoreText.text = string.Format("{0:D4}", displayedScore);
+
+            scoreText.fontSize = Mathf.Lerp(originalFontSize, originalFontSize * 2, scoreScaleCurve.Evaluate(progress));
+
+            yield return null;
+        }
+
+        scoreCoroutine = null;
     }
 }
