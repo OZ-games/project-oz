@@ -4882,7 +4882,7 @@ GameObject:
   - component: {fileID: 4249313119190905878}
   - component: {fileID: 1462268095410423464}
   - component: {fileID: 1311956531701088546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VFX_Projectile01
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -4948,6 +4948,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impactVFX: {fileID: 4091829556005044944, guid: ab02368e0232fa846acabe2e4a4a24fd, type: 3}
+  speed: 0
+  lifetime: 0
+  chargingSound: {fileID: 0}
+  castingSound: {fileID: 0}
+  impactSound: {fileID: 0}
 --- !u!1 &7162365985790072647
 GameObject:
   m_ObjectHideFlags: 0

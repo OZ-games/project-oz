@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - LeftHand
+  - RightHand
+  - RunnerHand
   layers:
   - Default
   - TransparentFX
@@ -12,6 +15,9 @@ TagManager:
   - Post-Processing
   - Water
   - UI
+  - Bullet
+  - Collision
+  - Object
   - 
   - 
   - 
@@ -22,12 +28,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Plane
+  - Game
+  - RenderTexture
   - 
   - 
   - 
