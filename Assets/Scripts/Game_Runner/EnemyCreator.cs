@@ -39,10 +39,10 @@ public class EnemyCreator : MonoBehaviour
             {
                 Vector3 randomPos = Random.insideUnitSphere * spawnRadius;
                 randomPos.z = Mathf.Abs(randomPos.z);
-                randomPos.y *= 0.2f;
+                randomPos.y *= 0.1f;
                 FlyingEnemy enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], player.position + randomPos, Quaternion.identity);
                 //FlyingEnemy enemy = Instantiate(enemyPrefab, spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
-                enemies.Add(enemy); 
+                enemies.Add(enemy);
             }
         }
     }

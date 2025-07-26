@@ -7166,14 +7166,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3246c705174682e4a941204ad16fda01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 5
-  spawnRadius: 2
+  spawnDelay: 3
+  spawnRadius: 4
   enemyPrefabs:
   - {fileID: -3640565977533894160, guid: a4fea1f31357f9c4aa74cebdc6102596, type: 3}
   - {fileID: 5365239598357879048, guid: d6c75f35d2bea094dace52bc1bd7ab9b, type: 3}
   - {fileID: -5534708384187850082, guid: d7acd22b112fa554ea5d1a6e969544db, type: 3}
   - {fileID: -6294090529183399863, guid: 4704dd0f53433f64f9b3ed60415f94a7, type: 3}
-  maxEnemyCount: 5
+  maxEnemyCount: 10
   spawnPoints: []
 --- !u!4 &1753119842
 Transform:

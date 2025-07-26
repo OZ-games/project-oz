@@ -8,9 +8,9 @@ public class JengaBlock : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.relativeVelocity.magnitude > 1)
+            if (collision.relativeVelocity.magnitude > 0.5f)
             {
-                GameManager.instance.UpdateScore((int)transform.position.y);
+                GameManager.instance.UpdateScore((int)transform.position.y * 100);
             }
         }
     }
