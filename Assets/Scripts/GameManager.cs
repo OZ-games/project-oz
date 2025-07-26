@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         if (scene.name == "MagicScene" || scene.name == "JengaScene")
         {
             timer.Appear();
-            timer.InitTimer(60);
+            timer.InitTimer(120);
             timer.OnFinishTimer.AddListener(() =>
             {
                 gameClearText.text = string.Format(GAMECLEAR_MESSAGE_FORMAT, CurScore);
